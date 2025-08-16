@@ -1,0 +1,155 @@
+/* Modern Crypto App Design System */
+
+:root {
+  /* Color Palette */
+  --primary-blue: #06B6D4;
+  --primary-blue-hover: #0891B2;
+  --success-green: #10B981;
+  --danger-red: #EF4444;
+  --warning-orange: #F59E0B;
+  
+  /* Neutral Colors */
+  --bg-primary: #0F172A;
+  --bg-secondary: #1E293B;
+  --bg-tertiary: #334155;
+  --bg-card: #1E293B;
+  --bg-hover: #334155;
+  
+  /* Text Colors */
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #64748B;
+  --text-inverse: #0F172A;
+  
+  /* Border & Shadow */
+  --border-color: #334155;
+  --border-radius: 12px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+}
+
+/* Base Styles */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* App container background */
+.app-container {
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+/* Card Components */
+.crypto-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+}
+
+/* Button Components */
+.btn-primary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover:not(:disabled) {
+  color: var(--text-primary);
+  transform: scale(1.1);
+}
+
+.btn-primary:disabled {
+  color: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Status Indicators */
+.status-positive {
+  color: var(--success-green);
+  font-weight: 600;
+}
+
+.status-negative {
+  color: var(--danger-red);
+  font-weight: 600;
+}
+
+.status-neutral {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* Loading States */
+.loading-skeleton {
+  background: linear-gradient(90deg, var(--bg-tertiary) 25%, var(--bg-secondary) 50%, var(--bg-tertiary) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Table Enhancements */
+.ag-theme-alpine {
+  --ag-background-color: var(--bg-card);
+  --ag-foreground-color: var(--text-primary);
+  --ag-header-background-color: var(--bg-secondary);
+  --ag-header-foreground-color: var(--text-secondary);
+  --ag-border-color: var(--border-color);
+  --ag-row-hover-color: var(--bg-hover);
+  --ag-selected-row-background-color: var(--primary-blue);
+  --ag-font-family: 'Inter', sans-serif;
+  --ag-font-size: 14px;
+  --ag-border-radius: var(--border-radius);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 32px;
+  }
+  
+  .crypto-card {
+    margin: var(--spacing-sm);
+  }
+}
