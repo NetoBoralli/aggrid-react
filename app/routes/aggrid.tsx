@@ -60,7 +60,7 @@ export default function AgGrid() {
     const [rowData, setRowData] = useState<SpaceMission[]>([]);
 
     const [colDefs, setColDefs] = useState([
-      { field: "mission" as const },
+      { field: "mission" as const, flex: 2 },
       { field: "company" as const, cellRenderer: CompanyLogoRenderer },
       { field: "location" as const },
       { field: "date" as const },
