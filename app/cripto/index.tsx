@@ -22,6 +22,16 @@ export const CRYPTO_IDS = [
 // Type for the crypto IDs
 export type CryptoId = typeof CRYPTO_IDS[number];
 
+// Define the data interface
+export interface CryptoData {
+  coin: string;
+  usd: number;
+  usd_market_cap: number;
+  usd_24h_vol: number;
+  usd_24h_change: number;
+  prices: number[];
+}
+
 // Function to join all IDs for API request
 export const getCryptoIdsParam = (): string => {
   return CRYPTO_IDS.join(',');

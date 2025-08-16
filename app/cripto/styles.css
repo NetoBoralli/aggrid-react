@@ -123,6 +123,13 @@ body {
   --ag-border-radius: var(--border-radius);
 }
 
+/* Vertical centering for specific columns */
+.ag-cell-vertical-center {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -151,5 +158,25 @@ body {
   
   .crypto-card {
     margin: var(--spacing-sm);
+  }
+  
+  /* Mobile AgGrid optimizations */
+  .ag-theme-alpine {
+    --ag-font-size: 12px;
+    --ag-line-height: 1.2;
+  }
+  
+  .ag-theme-alpine .ag-header-cell-text {
+    font-size: 11px;
+    font-weight: 600;
+  }
+  
+  .ag-theme-alpine .ag-cell {
+    padding: 4px 8px;
+  }
+  
+  /* Ensure horizontal scrolling on mobile */
+  .ag-theme-alpine .ag-body-horizontal-scroll-viewport {
+    min-height: 8px;
   }
 }
