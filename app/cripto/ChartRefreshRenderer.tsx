@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaSync } from 'react-icons/fa';
+import { FaChartLine, FaChartBar } from 'react-icons/fa';
 import SparklineCellRenderer from './SparklineCellRenderer';
 
 interface ChartRefreshRendererProps {
@@ -39,12 +39,14 @@ const ChartRefreshRenderer: React.FC<ChartRefreshRendererProps> = ({ value, data
       <button
         onClick={handleRefresh}
         disabled={isLoading}
-        className="p-2 rounded-lg bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 transition-colors duration-200"
+        className="btn-primary p-2 rounded-lg bg-transparent disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
         title={`Load 7-day price chart for ${coinId}`}
       >
-        <FaSync 
-          className={`w-3 h-3 text-white ${isLoading ? 'animate-spin' : ''}`} 
-        />
+        {isLoading ? (
+          <FaChartBar className="w-4 h-4 text-white animate-pulse" />
+        ) : (
+          <FaChartLine className="w-4 h-4 text-white hover:text-gray-200 transition-colors duration-200" />
+        )}
       </button>
     </div>
   );
