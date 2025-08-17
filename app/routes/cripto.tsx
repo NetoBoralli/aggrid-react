@@ -40,7 +40,7 @@ export default function Cripto() {
             <p className="text-gray-300 text-sm sm:text-base">
               {isUsingFallback 
                 ? "⚠️ Using cached data - API may be unavailable" 
-                : "Real-time market information and price trends (click refresh buttons to load charts)"
+                : "Real-time market information and price trends (click price chart buttons to load charts)"
               }
             </p>
           </div>
